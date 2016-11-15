@@ -50,7 +50,11 @@ typedef enum _PidLimitType {
     OVERCURRENT = (0x08),
 
     CONTROLLER_ERROR = (0x10),
-	HOME_EVENT = (0x20)
+
+    HOME_EVENT = (0x20),
+
+    STALL_EVENT = (0x40)
+
 } PidLimitType;
 
 typedef enum _PidCalibrationType {

@@ -72,7 +72,7 @@ void pushPIDLimitEvent(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(Bowle
 		event->value=GetPIDPosition(event->group);
 		event->latchTickError=0;
 		event->time = getMs();
-		SetPID(event->group,event->value);
+		//SetPID(event->group,event->value);
 	}
 
 	getPidGroupDataTable(event->group)->lastPushedValue=event->value;
