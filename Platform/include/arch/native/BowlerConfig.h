@@ -13,7 +13,7 @@
 
 #define StartCritical()
 #define EndCritical()
-
+float getMs(void);
 void Linux_Bowler_HAL_Init(void);
 #define Bowler_HAL_Init Linux_Bowler_HAL_Init
 #define SetColor(a,b,c)

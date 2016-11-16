@@ -44,10 +44,13 @@
 	#include "arch/native/BowlerConfig.h"
 #elif defined(__MICROBLAZE__)
 	#include "arch/xilinx/BowlerConfig.h"
+#elif defined HSMRI
+	#include "arch/native/BowlerConfig.h"
+
 #else
 	//#error Unknown archetecture!! See Bowler.h
 	//#warning this is a hacky work around
-	#include "BowlerConfig.h"
+	//#include "BowlerConfig.h"
 #endif
 
 #include "BowlerServerHardwareAbstraction.h"

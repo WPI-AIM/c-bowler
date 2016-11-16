@@ -12,13 +12,6 @@ static float start;
 boolean GetBowlerPacket_arch(BowlerPacket * Packet){
 	return false; 
 }
-
-/**
- * send the array out the connection
- */
-uint16_t putStream(uint8_t *packet,uint16_t size){
-	return true; 
-}
 /**
  * get the time in ms
  */
