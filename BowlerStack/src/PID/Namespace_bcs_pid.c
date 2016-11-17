@@ -19,8 +19,7 @@ boolean pidAsyncEventCallbackLocal(BowlerPacket *Packet, boolean(*pidAsyncCallba
 }
 
 //Get RPC's
-  RPC_LIST bcsPid_APID = {BOWLER_GET,
-    "apid",
+  RPC_LIST bcsPid_APID = {BOWLER_GET,    "apid",
     &processPIDGet,
      {0}, // Calling arguments
     BOWLER_POST, // response method
@@ -28,8 +27,7 @@ boolean pidAsyncEventCallbackLocal(BowlerPacket *Packet, boolean(*pidAsyncCallba
         0}, // Calling arguments
     NULL //Termination
 };
-  RPC_LIST bcsPid__PID = {BOWLER_GET,
-    "_pid",
+  RPC_LIST bcsPid__PID = {BOWLER_GET,    "_pid",
     &processPIDGet,
    { BOWLER_I08, //channel
         0}, // Calling arguments
@@ -39,8 +37,7 @@ boolean pidAsyncEventCallbackLocal(BowlerPacket *Packet, boolean(*pidAsyncCallba
         0}, // Calling arguments
     NULL //Termination
 };
-  RPC_LIST bcsPid_CPID = {BOWLER_GET,
-    "cpid",
+  RPC_LIST bcsPid_CPID = {BOWLER_GET,    "cpid",
     &processPIDGet,
     { BOWLER_I08, //channel
         0}, // Calling arguments
