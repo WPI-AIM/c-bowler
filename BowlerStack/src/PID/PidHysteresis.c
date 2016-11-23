@@ -79,7 +79,7 @@ void runPidHysterisisCalibration(int group) {
 
 CAL_STATE pidHysterisis(int group) {
 
-    if (RunEvery(&getPidGroupDataTable(group)->timer) > 0) {
+   // if (RunEvery(&getPidGroupDataTable(group)->timer) > 0) {Moving this kind of time control to higher level fucntions
         Print_Level l = getPrintLevel();
         //setPrintLevelInfoPrint();
         float boundVal = 150.0;
@@ -132,7 +132,7 @@ CAL_STATE pidHysterisis(int group) {
             setOutput(group, -1.0f);
         }
         setPrintLevel(l);
-    }
+    //}
     if (getPidGroupDataTable(group)->calibration.state == done)
         SetPIDCalibrateionState(group, CALIBRARTION_DONE);
     return getPidGroupDataTable(group)->calibration.state;
@@ -170,7 +170,7 @@ void checkLinkHomingStatus(int group) {
     }
     float current = GetPIDPosition(group);
     float currentTime = getMs();
-    if (RunEvery(&getPidGroupDataTable(group)->timer) > 0) {
+   // if (RunEvery(&getPidGroupDataTable(group)->timer) > 0) {Moving this kind of time control to higher level fucntions
         //println_W("Check Homing ");
         if (GetPIDCalibrateionState(group) != CALIBRARTION_home_velocity) {
             float boundVal = getPidGroupDataTable(group)->homing.homingStallBound;
@@ -233,5 +233,5 @@ void checkLinkHomingStatus(int group) {
             SetPIDCalibrateionState(group, CALIBRARTION_DONE);
         }
         getPidGroupDataTable(group)->homing.previousValue = current;
-    }
+   // }
 }

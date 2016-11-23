@@ -9,7 +9,7 @@
 RunEveryData pidAsyncTimer ={0,100};
 
 void updatePidAsync(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(BowlerPacket *Packet)){
-    if(RunEvery(&pidAsyncTimer)){
+ //   if(RunEvery(&pidAsyncTimer)){
         int i;
         int update = false; 
         for (i=0;i<getNumberOfPidChannels();i++){
@@ -23,7 +23,7 @@ void updatePidAsync(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(BowlerPa
         if(update){
                 pushAllPIDPositions(Packet,pidAsyncCallbackPtr);
         }
-    }
+	//}
 }
 
 void pushAllPIDPositions(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(BowlerPacket *Packet)){

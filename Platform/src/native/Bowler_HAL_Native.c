@@ -16,7 +16,10 @@ boolean GetBowlerPacket_arch(BowlerPacket * Packet){
  * get the time in ms
  */
 float getMs(void){
-	return (time(NULL) * 1000)-start;
+	struct timespec t_current;
+	clock_gettime(CLOCK_MONOTONIC, &t_current);
+
+	return (t_current.tv_sec*1000 + t_current.tv_nsec/ 1.0e6);
 }
 /**
  * send this char to the print terminal
