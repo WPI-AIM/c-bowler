@@ -58,7 +58,7 @@ void pushPIDLimitEvent(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(Bowle
 	}
 	event->latchTickError=0;
 	if(event->type == INDEXEVENT){
-		if(getPidGroupDataTable(event->group)->config.useIndexLatch){
+		/*if(getPidGroupDataTable(event->group)->config.useIndexLatch){
 			event->latchTickError = event->value-GetPIDPosition(event->group);
 			event->value = getPidGroupDataTable(event->group)->config.IndexLatchValue;
 			if(getPidGroupDataTable(event->group)->config.stopOnIndex){
@@ -66,7 +66,7 @@ void pushPIDLimitEvent(BowlerPacket *Packet,boolean (*pidAsyncCallbackPtr)(Bowle
 			}else{
 				event->value = pidResetNoStop(event->group,event->value);
 			}
-		}
+		}*/
 	}else{
         //println_I("ABSTRACTPID: End stop limit, setting new PID setpoint");
 		event->value=GetPIDPosition(event->group);
